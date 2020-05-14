@@ -36,15 +36,18 @@ async function getWeather(location) {
       id: responseData.weather[0].id,
     };
     loaderIcon.classList = 'hide';
+    locationButton.className = 'show'
+    locationButton.textContent = 'Start Over'
     displayWeather(userWeather);
   } catch (error) {
     alert(`getWeather error: ${error.message}`);
+    location.reload();
   }
 }
 
 function errorHandler() {
   alert('Error getting location');
-  loaderIcon.classList = 'hide';
+  location.reload();
 }
 
 function displayWeather(userWeather) {
@@ -73,12 +76,13 @@ function displayWeather(userWeather) {
   currentTempSpan.innerHTML = `<h4>${userWeather.currentTempF}&deg;F</h4>`;
   feelsLikeSpan.innerHTML = `<h5>Feels like ${userWeather.feelsLikeF}&deg;F</h5>`;
   windSpeedSpan.innerHTML = `<h5>Winds at ${userWeather.windSpeed} MPH</h5>`;
+  locationButton.textContent = 'Start Over'
 }
 
 locationButton.addEventListener('click', () => {
   if (locationButton.textContent === 'Use My Location') {
   loaderIcon.classList = 'show';
+  locationButton.className = 'hide'
   navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
-  locationButton.textContent = 'Start Over'
   } else location.reload();
 });

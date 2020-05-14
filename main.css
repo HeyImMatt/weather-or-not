@@ -14,7 +14,7 @@ body {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 #main-modal {
@@ -48,6 +48,10 @@ body {
 
 #weather-icon {
   font-size: 75px;
+}
+
+#loading-icon {
+  margin-bottom: 20%;
 }
 
 h1,
