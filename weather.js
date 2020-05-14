@@ -46,7 +46,7 @@ async function getWeather(location) {
 }
 
 function errorHandler() {
-  alert('Error getting location');
+  alert('Error getting location. Please allow the site to use your location to get weather data.');
   location.reload();
 }
 
