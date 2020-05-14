@@ -16,13 +16,10 @@ function sendHttpRequest(url) {
 async function getWeather(location) {
   let lat = location.coords.latitude;
   let lon = location.coords.longitude;
-  // console.log('Lat ' + lat);
-  // console.log('Long ' + lon);
   try {
     const responseData = await sendHttpRequest(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=c4fcb7ef3c8a27ca78861967c9aeebcd`,
     );
-    // console.log(responseData);
     let userWeather = {
       city: responseData.name.toUpperCase(),
       description: responseData.weather[0].description.toUpperCase(),
@@ -43,9 +40,6 @@ function errorHandler(err) {
 }
 
 function displayWeather(userWeather) {
-  // console.log(
-  //   `Displaying weather ${userWeather.city}, ${userWeather.description}, ${userWeather.currentTempF}, ${userWeather.feelsLikeF}, ${userWeather.windSpeed}`,
-  // );
   const citySpan = document.getElementById('city');
   const weatherIconSpan = document.getElementById('weather-icon')
   const descriptionSpan = document.getElementById('description');
@@ -68,6 +62,8 @@ document
   });
 
   navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
+
+  // Static Data for CSS Testing
 
   // function fakeData() {
   //   let userWeather = {
