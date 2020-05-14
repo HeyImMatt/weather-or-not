@@ -84,7 +84,7 @@ document
 
 // Static Data for CSS Testing
 
-// function fakeData() {
+// function staticData() {
 //   let userWeather = {
 //     city: 'PORTLAND',
 //     description: 'OVERCAST CLOUDS',
@@ -96,4 +96,4 @@ document
 //   displayWeather(userWeather);
 // }
 
-// fakeData();
+// staticData();
