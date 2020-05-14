@@ -1,4 +1,10 @@
 const loaderIcon = document.getElementById('loading-icon');
+const citySpan = document.getElementById('city');
+const weatherIconSpan = document.getElementById('weather-icon');
+const descriptionSpan = document.getElementById('description');
+const currentTempSpan = document.getElementById('current-temp');
+const feelsLikeSpan = document.getElementById('feels-like');
+const windSpeedSpan = document.getElementById('wind-speed');
 
 function sendHttpRequest(url) {
   return fetch(url, {
@@ -50,7 +56,7 @@ function displayWeather(userWeather) {
   } else if (userWeather.id >= 700 && userWeather.id < 799) {
     weatherIcon = '&#127787;';
   } else if (userWeather.id === 800) {
-    weatherIcon = '&#9728;';
+    weatherIcon = '&#127774;';
   } else if (userWeather.id === 801) {
     weatherIcon = '&#127780;';
   } else if (userWeather.id === 802) {
@@ -59,19 +65,12 @@ function displayWeather(userWeather) {
     weatherIcon = '&#9729;';
   }
 
-  const citySpan = document.getElementById('city');
-  const weatherIconSpan = document.getElementById('weather-icon');
-  const descriptionSpan = document.getElementById('description');
-  const currentTempSpan = document.getElementById('current-temp');
-  const feelsLikeSpan = document.getElementById('feels-like');
-  const windSpeedSpan = document.getElementById('wind-speed');
-
   citySpan.innerHTML = `<h3>${userWeather.city}</h3>`;
   weatherIconSpan.innerHTML = weatherIcon;
   descriptionSpan.innerHTML = `<h4>${userWeather.description}</h4>`;
   currentTempSpan.innerHTML = `<h4>${userWeather.currentTempF}&deg;F</h4>`;
   feelsLikeSpan.innerHTML = `<h5>Feels like ${userWeather.feelsLikeF}&deg;F</h5>`;
-  windSpeedSpan.innerHTML = `<h5>Wind - ${userWeather.windSpeed} MPH</h5>`;
+  windSpeedSpan.innerHTML = `<h5>Winds at ${userWeather.windSpeed} MPH</h5>`;
 }
 
 document
@@ -80,20 +79,4 @@ document
     navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
   });
 
-  navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
-
-// Static Data for CSS Testing
-
-// function staticData() {
-//   let userWeather = {
-//     city: 'PORTLAND',
-//     description: 'OVERCAST CLOUDS',
-//     currentTempF: 58,
-//     feelsLikeF: 52,
-//     windSpeed: 6.9,
-//     id: 803,
-//   };
-//   displayWeather(userWeather);
-// }
-
-// staticData();
+navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
