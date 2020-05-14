@@ -1,3 +1,4 @@
+const locationButton = document.querySelector('button');
 const loaderIcon = document.getElementById('loading-icon');
 const citySpan = document.getElementById('city');
 const weatherIconSpan = document.getElementById('weather-icon');
@@ -41,8 +42,9 @@ async function getWeather(location) {
   }
 }
 
-function errorHandler(err) {
+function errorHandler() {
   alert('Error getting location');
+  loaderIcon.classList = 'hide';
 }
 
 function displayWeather(userWeather) {
@@ -73,8 +75,10 @@ function displayWeather(userWeather) {
   windSpeedSpan.innerHTML = `<h5>Winds at ${userWeather.windSpeed} MPH</h5>`;
 }
 
-document.querySelector('button').addEventListener('click', () => {
+locationButton.addEventListener('click', () => {
+  if (locationButton.textContent === 'Use My Location') {
+  loaderIcon.classList = 'show';
   navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
+  locationButton.textContent = 'Start Over'
+  } else location.reload();
 });
-
-navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
