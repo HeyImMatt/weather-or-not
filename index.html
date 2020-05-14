@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Get Your Weather</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="weather.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+
+<body>
+  <div id="main-modal">
+    <div id="main-modal-header">
+      <h1>Current Weather</h1>
+      <!-- <h3>Or</h3>
+    <br>
+    <input type="text" id="location-search" placeholder="Enter a city name..."> -->
+    </div>
+    <div id="main-modal-body">
+      <img id="loading-icon" class="show" alt="loading image" src="loading.gif">
+      <span id="city"></span>
+      <span id="weather-icon"></span>
+      <span id="description"></span>
+      <span id="current-temp"></span>
+      <span id="feels-like"></span>
+      <span id="wind-speed"></span>
+      <button id="get-browser-location">Use My Location</button>
+    </div>
+  </div>
+</body>
