@@ -79,4 +79,10 @@ document
     navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
   });
 
+  document
+  .getElementById('get-browser-location')
+  .addEventListener('touchend', () => {
+    navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
+  });
+
 navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
