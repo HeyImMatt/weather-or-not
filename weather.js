@@ -73,16 +73,8 @@ function displayWeather(userWeather) {
   windSpeedSpan.innerHTML = `<h5>Winds at ${userWeather.windSpeed} MPH</h5>`;
 }
 
-document
-  .getElementById('get-browser-location')
-  .addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
-  });
-
-  document
-  .getElementById('get-browser-location')
-  .addEventListener('touchstart', () => {
-    navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
-  });
+document.querySelector('button').addEventListener('click', () => {
+  navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
+});
 
 navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
