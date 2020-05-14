@@ -81,7 +81,7 @@ document
 
   document
   .getElementById('get-browser-location')
-  .addEventListener('touchend', () => {
+  .addEventListener('touchstart', () => {
     navigator.geolocation.getCurrentPosition(getWeather, errorHandler);
   });
 
