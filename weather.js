@@ -51,6 +51,8 @@ function errorHandler() {
 }
 
 function displayWeather(userWeather) {
+  let date = new  Date;
+  let hour = date.getHours();
   let weatherIcon;
   if (userWeather.id >= 200 && userWeather.id < 299) {
     weatherIcon = '&#9928;';
@@ -61,7 +63,9 @@ function displayWeather(userWeather) {
   } else if (userWeather.id >= 700 && userWeather.id < 799) {
     weatherIcon = '&#127787;';
   } else if (userWeather.id === 800) {
-    weatherIcon = '&#127774;';
+    if (hour > 19) {
+      weatherIcon = '&#127773;';
+    } else weatherIcon = '&#127774;';
   } else if (userWeather.id === 801) {
     weatherIcon = '&#127780;';
   } else if (userWeather.id === 802) {
