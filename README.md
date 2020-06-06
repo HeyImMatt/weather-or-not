@@ -14,7 +14,7 @@ This site uses the browser's location to fetch weather data from the OpenWeather
 You can view and use it here: https://heyimmatt.github.io/weather-or-not/
 
 Main Screen  
-![Main Screen](https://github.com/HeyImMatt/pingpong/blob/master/images/weather-ui.png)
+![Main Screen](https://github.com/HeyImMatt/weather-or-not/blob/master/images/weather-ui.png)
 
 
 ## Technologies Used
