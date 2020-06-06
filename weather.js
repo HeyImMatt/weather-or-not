@@ -51,7 +51,7 @@ function errorHandler() {
 }
 
 function displayWeather(userWeather) {
-  let date = new  Date;
+  let date = new Date;
   let hour = date.getHours();
   let weatherIcon;
   if (userWeather.id >= 200 && userWeather.id < 299) {
